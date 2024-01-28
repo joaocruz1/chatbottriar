@@ -218,7 +218,7 @@ def markRead_Mensagem(messageId):
 def administrar_chatbot(text,number, messageId, name):
     text = text.lower() #mensaje que envio el usuario
     list = []
-    print("mensaje del usuario: ",text)
+    print("mensagem do usuário: ",text)
 
     markRead = markRead_Mensagem(messageId)
     list.append(markRead)
@@ -239,7 +239,7 @@ def administrar_chatbot(text,number, messageId, name):
     elif "recepção" in text:
         body = "Quer falar com quem da recepção? "
         footer = "Equipe Recepção 👇"
-        options = ["Ariane", "Larissa Trindade", ""]
+        options = ["Ariane", "Larissa Trindade"]
 
         replyButtonData = buttonReply_Messagem(number, options, body, footer, "sed2",messageId)
         list.append(replyButtonData)
@@ -277,9 +277,19 @@ def administrar_chatbot(text,number, messageId, name):
 
         buttonReply = buttonReply_Messagem(number, options, body, footer, "sed6",messageId)
         list.append(buttonReply)
+    
+    elif "cadastro" in text or "legalização" in text:
+        textMessage = text_Mensagem(number, "Cadastro e Legalização")
+        list.append(textMessage)
+
+    elif "sistema" in text or "aplicativo" in text:
+        textMessage = text_Mensagem(number, "Sistemas e Aplicativos")
+        list.append(textMessage)
+        
     elif "no, gracias." in text:
         textMessage = text_Mensagem(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. Recuerda que también ofrecemos material gratuito para la comunidad. ¡Hasta luego! 😊")
         list.append(textMessage)
+    
     else :
         data = text_Mensagem(number,"Não entendi sua pergunta")
         list.append(data)
