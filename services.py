@@ -235,7 +235,6 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(replyReaction)
         list.append(listReply)
     
-
     elif "recepção" in text:
         body = "Quer falar com quem da recepção? "
         footer = "Equipe Recepção 👇"
@@ -253,13 +252,12 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(replyButtonData)
 
     elif "fiscal" in text:
-    
         body = "Quer falar com quem do fiscal? "
         footer = "Equipe Fiscal 👇"
         options = ["Aline","Rysssa","Polyana" ]
 
-        listReply = listReply_Messagem(number, options, body, footer, "sed4",messageId)
-        list.append(listReply)
+        buttonReply = buttonReply_Messagem(number, options, body, footer, "sed4",messageId)
+        list.append(buttonReply)
 
     elif "contábil" in text :
         body = "Quer falar com quem do Contábil?"
