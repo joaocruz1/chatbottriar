@@ -227,7 +227,7 @@ def administrar_chatbot(text,number, messageId, name):
     if "oi" in text:
         body = "Olá 👋, seja bem vindo a Triar Contabiilidade, qual setor gostaria de entrar em contato?"
         footer = "Equipe Triar"
-        options = ["Recepção", "RH","Fiscal","Financeiro","Contábil", "Cadastro e Legalização","Sistemas e Aplicativos"]
+        options = ["🛎️Recepção", "🤵‍♀️RH","🧾Fiscal","💸Financeiro","📒Contábil", "✅Cadastro e Legalização","👨‍💻Sistemas e Aplicativos"]
 
         listReply = listReply_Messagem(number, options, body, footer, "sed1",messageId)
         replyReaction = replyReaction_Messagem(number, messageId, "🫡")
