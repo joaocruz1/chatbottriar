@@ -285,7 +285,7 @@ def administrar_chatbot(text,number, messageId, name):
         textMessage = text_Mensagem(number, "Sistemas e Aplicativos")
         list.append(textMessage)
         
-    elif "não" or "obrigado" in text:
+    elif "não" in text or "obrigado" in text:
         textMessage = text_Mensagem(number,"Agradecemos o contato, caso precise de algo mais entre em contato. Tenha um bom dia. 👋")
         list.append(textMessage)
     

@@ -29,7 +29,7 @@ def receber_mensagens():
         changes = entry['changes'][0]
         value = changes['value']
         message = value['messages'][0]
-        number = services.replace_start(message['from'])
+        number = services.message['from']
         messageId = message['id']
         contacts = value['contacts'][0]
         name = contacts['profile']['name']
