@@ -263,17 +263,16 @@ def administrar_chatbot(text,number, messageId, name):
 
     elif "contábil" in text :
         body = "Quer falar com quem do Contábil?"
-        footer = "Equipo Contabil 👇"
-        options = ["📅 10: mañana 10:00 AM", "📅 7 de junio, 2:00 PM", "📅 8 de junio, 4:00 PM"]
+        footer = "Equipe Contabil 👇"
+        options = ["Pessoa1", "Pessoa2", "Pessoa3"]
 
-        listReply = listReply_Messagem(number, options, body, footer, "sed5",messageId)
-        list.append(listReply)
+        buttonReply = buttonReply_Messagem(number, options, body, footer, "sed5",messageId)
+        list.append(buttonReply)
 
     elif "financeiro" in text:
-        body = "Excelente, has seleccionado la reunión para el 7 de junio a las 2:00 PM. Te enviaré un recordatorio un día antes. ¿Necesitas ayuda con algo más hoy?"
-        footer = "Equipo Bigdateros"
-        options = ["✅ Sí, por favor", "❌ No, gracias."]
-
+        body = "Quer falar com quem do Financeiro?"
+        footer = "Equipe Financeiro 👇"
+        options = ["Pessoa1", "Pessoa2", "Pessoa3"]
 
         buttonReply = buttonReply_Messagem(number, options, body, footer, "sed6",messageId)
         list.append(buttonReply)
@@ -286,8 +285,8 @@ def administrar_chatbot(text,number, messageId, name):
         textMessage = text_Mensagem(number, "Sistemas e Aplicativos")
         list.append(textMessage)
         
-    elif "no, gracias." in text:
-        textMessage = text_Mensagem(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. Recuerda que también ofrecemos material gratuito para la comunidad. ¡Hasta luego! 😊")
+    elif "não" or "obrigado" in text:
+        textMessage = text_Mensagem(number,"Agradecemos o contato, caso precise de algo mais entre em contato. Tenha um bom dia. 👋")
         list.append(textMessage)
     
     else :
@@ -296,18 +295,3 @@ def administrar_chatbot(text,number, messageId, name):
 
     for item in list:
         enviar_Mensagem_whatsapp(item)
-
-#al parecer para mexico, whatsapp agrega 521 como prefijo en lugar de 52,
-# este codigo soluciona ese inconveniente.
-def replace_start(s):
-    if s.startswith("521"):
-        return "52" + s[3:]
-    else:
-        return s
-
-# para argentina
-def replace_start(s):
-    if s.startswith("549"):
-        return "54" + s[3:]
-    else:
-        return s
