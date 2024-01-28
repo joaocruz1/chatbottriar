@@ -20,7 +20,7 @@ def obtener_Mensagem_whatsapp(message):
     elif typeMessage == 'interactive' and message['interactive']['type'] == 'button_reply':
         text = message['interactive']['button_reply']['title']
     else:
-        text = 'mensaje no procesado'
+        text = 'mensagem não processada'
 
     
     return text
@@ -41,7 +41,7 @@ def enviar_Mensagem_whatsapp(data):
         if response.status_code == 200:
             return 'mensagem enviado', 200
         else:
-            return 'error al enviar mensaje', response.status_code
+            return 'erro ao enviar mensagem', response.status_code
     except Exception as e:
         return e,403
     
@@ -242,8 +242,6 @@ def administrar_chatbot(text,number, messageId, name):
         options = ["Ariane", "Larissa Trindade", ""]
 
         replyButtonData = buttonReply_Messagem(number, options, body, footer, "sed2",messageId)
-        list.append(replyButtonData)
-
         list.append(replyButtonData)
 
     elif "rh" in text:
