@@ -236,7 +236,7 @@ def administrar_chatbot(text,number, messageId, name):
         list.append(listReply)
     
 
-    elif "Recepção" in text:
+    if "Recepção" in text:
         body = "Quer falar com quem da recepção? "
         footer = "Equipe Recepção 👇"
         options = ["Ariane", "Larissa Trindade", ""]
@@ -246,7 +246,7 @@ def administrar_chatbot(text,number, messageId, name):
 
         list.append(replyButtonData)
 
-    elif "RH" in text:
+    if "RH" in text:
         body = "Quer falar com quem do RH?"
         footer = "Equipe RH 👇"
         options = ["Sarah","Camila","Heloisa"]
@@ -254,7 +254,7 @@ def administrar_chatbot(text,number, messageId, name):
         replyButtonData = buttonReply_Messagem(number, options, body, footer, "sed3",messageId)
         list.append(replyButtonData)
 
-    elif "Fiscal" in text:
+    if "Fiscal" in text:
     
         body = "Quer falar com quem do fiscal? "
         footer = "Equipe Fiscal 👇"
@@ -263,7 +263,7 @@ def administrar_chatbot(text,number, messageId, name):
         listReply = listReply_Messagem(number, options, body, footer, "sed4",messageId)
         list.append(listReply)
 
-    elif "Contábil" in text :
+    if "Contábil" in text :
         body = "Quer falar com quem do Contábil?"
         footer = "Equipo Contabil 👇"
         options = ["📅 10: mañana 10:00 AM", "📅 7 de junio, 2:00 PM", "📅 8 de junio, 4:00 PM"]
@@ -271,7 +271,7 @@ def administrar_chatbot(text,number, messageId, name):
         listReply = listReply_Messagem(number, options, body, footer, "sed5",messageId)
         list.append(listReply)
 
-    elif "Financei" in text:
+    if "Financei" in text:
         body = "Excelente, has seleccionado la reunión para el 7 de junio a las 2:00 PM. Te enviaré un recordatorio un día antes. ¿Necesitas ayuda con algo más hoy?"
         footer = "Equipo Bigdateros"
         options = ["✅ Sí, por favor", "❌ No, gracias."]
@@ -279,7 +279,7 @@ def administrar_chatbot(text,number, messageId, name):
 
         buttonReply = buttonReply_Messagem(number, options, body, footer, "sed6",messageId)
         list.append(buttonReply)
-    elif "no, gracias." in text:
+    if "no, gracias." in text:
         textMessage = text_Mensagem(number,"Perfecto! No dudes en contactarnos si tienes más preguntas. Recuerda que también ofrecemos material gratuito para la comunidad. ¡Hasta luego! 😊")
         list.append(textMessage)
     else :
